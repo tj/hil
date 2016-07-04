@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 )
 
 // IdentifierCheck is a SemanticCheck that checks that all identifiers

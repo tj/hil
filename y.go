@@ -5,7 +5,7 @@ import __yyfmt__ "fmt"
 
 //line lang.y:6
 import (
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 )
 
 //line lang.y:14

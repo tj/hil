@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 	"github.com/mitchellh/mapstructure"
 )
 

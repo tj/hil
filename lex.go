@@ -7,7 +7,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 )
 
 //go:generate go tool yacc -p parser lang.y

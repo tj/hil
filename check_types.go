@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 )
 
 // TypeCheck implements ast.Visitor for type checking an AST tree.

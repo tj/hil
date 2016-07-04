@@ -6,7 +6,7 @@
 package hil
 
 import (
-    "github.com/hashicorp/hil/ast"
+    "github.com/tj/hil/ast"
 )
 
 %}

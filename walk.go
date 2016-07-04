@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 	"github.com/mitchellh/reflectwalk"
 )
 

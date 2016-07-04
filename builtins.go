@@ -3,7 +3,7 @@ package hil
 import (
 	"strconv"
 
-	"github.com/hashicorp/hil/ast"
+	"github.com/tj/hil/ast"
 )
 
 // NOTE: All builtins are tested in engine_test.go
