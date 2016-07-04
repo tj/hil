@@ -49,7 +49,7 @@ func TestInterpolationWalker_detect(t *testing.T) {
 
 		{
 			Input: map[string]interface{}{
-				"foo": `${file("test.txt")}`,
+				"foo": `${file('test.txt')}`,
 			},
 			Result: []string{
 				"Call(file, Literal(TypeString, test.txt))",
@@ -58,7 +58,7 @@ func TestInterpolationWalker_detect(t *testing.T) {
 
 		{
 			Input: map[string]interface{}{
-				"foo": `${file("foo/bar.txt")}`,
+				"foo": `${file('foo/bar.txt')}`,
 			},
 			Result: []string{
 				"Call(file, Literal(TypeString, foo/bar.txt))",
@@ -67,7 +67,7 @@ func TestInterpolationWalker_detect(t *testing.T) {
 
 		{
 			Input: map[string]interface{}{
-				"foo": `${join(",", foo.bar.*.id)}`,
+				"foo": `${join(',', foo.bar.*.id)}`,
 			},
 			Result: []string{
 				"Call(join, Literal(TypeString, ,), Variable(foo.bar.*.id))",
@@ -76,7 +76,7 @@ func TestInterpolationWalker_detect(t *testing.T) {
 
 		{
 			Input: map[string]interface{}{
-				"foo": `${concat("localhost", ":8080")}`,
+				"foo": `${concat('localhost', ':8080')}`,
 			},
 			Result: []string{
 				"Call(concat, Literal(TypeString, localhost), Literal(TypeString, :8080))",

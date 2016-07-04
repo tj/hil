@@ -47,7 +47,7 @@ func TestTypeCheck(t *testing.T) {
 		},
 
 		{
-			`foo ${rand("42")}`,
+			`foo ${rand('42')}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"rand": ast.Function{
@@ -97,7 +97,7 @@ func TestTypeCheck(t *testing.T) {
 		},
 
 		{
-			`foo ${rand("42")}`,
+			`foo ${rand('42')}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"rand": ast.Function{
@@ -115,7 +115,7 @@ func TestTypeCheck(t *testing.T) {
 		},
 
 		{
-			`foo ${rand("42", 42)}`,
+			`foo ${rand('42', 42)}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"rand": ast.Function{
@@ -271,7 +271,7 @@ func TestTypeCheck_implicit(t *testing.T) {
 		},
 
 		{
-			`foo ${foo("42", 42)}`,
+			`foo ${foo('42', 42)}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"foo": ast.Function{

@@ -36,7 +36,7 @@ func TestLex(t *testing.T) {
 		},
 
 		{
-			"foo ${\"bar\"}",
+			"foo ${'bar'}",
 			[]int{STRING, PROGRAM_BRACKET_LEFT, STRING, PROGRAM_BRACKET_RIGHT, lexEOF},
 		},
 
@@ -107,14 +107,14 @@ func TestLex(t *testing.T) {
 		},
 
 		{
-			"foo ${foo(\"baz\")}",
+			"foo ${foo('baz')}",
 			[]int{STRING, PROGRAM_BRACKET_LEFT,
 				IDENTIFIER, PAREN_LEFT, STRING, PAREN_RIGHT,
 				PROGRAM_BRACKET_RIGHT, lexEOF},
 		},
 
 		{
-			`foo ${"${var.foo}"}`,
+			`foo ${'${var.foo}'}`,
 			[]int{STRING, PROGRAM_BRACKET_LEFT,
 				PROGRAM_BRACKET_LEFT, IDENTIFIER, PROGRAM_BRACKET_RIGHT,
 				PROGRAM_BRACKET_RIGHT, lexEOF},

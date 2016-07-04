@@ -141,7 +141,7 @@ func TestEval(t *testing.T) {
 			TypeMap,
 		},
 		{
-			`${foo["bar"]}`,
+			`${foo['bar']}`,
 			&ast.BasicScope{
 				VarMap: map[string]ast.Variable{
 					"foo": ast.Variable{
@@ -164,7 +164,7 @@ func TestEval(t *testing.T) {
 			TypeString,
 		},
 		{
-			`${foo["bar"]} ${foo["foo"]}`,
+			`${foo['bar']} ${foo['foo']}`,
 			&ast.BasicScope{
 				VarMap: map[string]ast.Variable{
 					"foo": ast.Variable{
@@ -552,7 +552,7 @@ func TestEvalInternal(t *testing.T) {
 		},
 
 		{
-			`foo ${rand("foo", "bar")}`,
+			`foo ${rand('foo', 'bar')}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"rand": ast.Function{
@@ -575,7 +575,7 @@ func TestEvalInternal(t *testing.T) {
 		},
 
 		{
-			`${foo["bar"]}`,
+			`${foo['bar']}`,
 			&ast.BasicScope{
 				VarMap: map[string]ast.Variable{
 					"foo": ast.Variable{
@@ -599,7 +599,7 @@ func TestEvalInternal(t *testing.T) {
 		},
 
 		{
-			`${foo["bar"]}`,
+			`${foo['bar']}`,
 			&ast.BasicScope{
 				VarMap: map[string]ast.Variable{
 					"foo": ast.Variable{
@@ -692,7 +692,7 @@ func TestEvalInternal(t *testing.T) {
 		},
 
 		{
-			`${foo["bar"]} ${bar[1]}`,
+			`${foo['bar']} ${bar[1]}`,
 			&ast.BasicScope{
 				VarMap: map[string]ast.Variable{
 					"foo": ast.Variable{
@@ -1018,7 +1018,7 @@ func TestEvalInternal(t *testing.T) {
 		},
 
 		{
-			`foo ${foo("42")}`,
+			`foo ${foo('42')}`,
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"foo": ast.Function{

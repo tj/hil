@@ -132,7 +132,7 @@ func (x *parserLex) lexModeInterpolation(yylval *parserSymType) int {
 
 		// If we see a double quote then we're lexing a string since
 		// we're in interpolation mode.
-		if c == '"' {
+		if c == '\'' {
 			result, terminated := x.lexString(yylval, true)
 			if !terminated {
 				// The string didn't end, which means that we're in the
@@ -305,7 +305,7 @@ func (x *parserLex) lexString(yylval *parserSymType, quoted bool) (int, bool) {
 		// Behavior is a bit different if we're lexing within a quoted string.
 		if quoted {
 			// If its a double quote, we've reached the end of the string
-			if c == '"' {
+			if c == '\'' {
 				terminated = true
 				break
 			}
@@ -313,7 +313,7 @@ func (x *parserLex) lexString(yylval *parserSymType, quoted bool) (int, bool) {
 			// Let's check to see if we're escaping anything.
 			if c == '\\' {
 				switch n := x.next(); n {
-				case '\\', '"':
+				case '\\', '\'':
 					c = n
 				case 'n':
 					c = '\n'

@@ -87,7 +87,7 @@ func TestParse(t *testing.T) {
 		},
 
 		{
-			"foo ${\"bar\"}",
+			"foo ${'bar'}",
 			false,
 			&ast.Output{
 				Posx: ast.Pos{Column: 1, Line: 1},
@@ -104,12 +104,6 @@ func TestParse(t *testing.T) {
 					},
 				},
 			},
-		},
-
-		{
-			`foo ${func('baz')}`,
-			true,
-			nil,
 		},
 
 		{
@@ -304,7 +298,7 @@ func TestParse(t *testing.T) {
 		},
 
 		{
-			`foo ${"bar ${baz}"}`,
+			`foo ${'bar ${baz}'}`,
 			false,
 			&ast.Output{
 				Posx: ast.Pos{Column: 1, Line: 1},

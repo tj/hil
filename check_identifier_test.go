@@ -108,7 +108,7 @@ func TestIdentifierCheck(t *testing.T) {
 		},
 
 		{
-			"foo ${rand(\"foo\", 42)} ",
+			"foo ${rand('foo', 42)} ",
 			&ast.BasicScope{
 				FuncMap: map[string]ast.Function{
 					"rand": ast.Function{
